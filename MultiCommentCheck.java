@@ -12,7 +12,7 @@ public class MultiCommentCheck {
     {
   
         // Regex to check valid string.
-        String regex = "/\\*.*?|[\n]?\\*/";
+        String regex = "(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)";
   
         // Compile the ReGex
         Pattern p = Pattern.compile(regex, Pattern.DOTALL);
@@ -38,8 +38,12 @@ public class MultiCommentCheck {
     {
   
         // Test Case: 1
-        String str1 = "/* this is comment \t \n */";
+        String str1 = "/* this is comment \t \n */ */";
         System.out.println(isitComment(str1));
+
+        // Test Case: 2
+        String str2 = "/* this is comment \t \n */";
+        System.out.println(isitComment(str2));
   
 
     }
