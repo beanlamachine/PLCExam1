@@ -11,7 +11,7 @@ public class VarClassMethodName {
     {
   
         // Regex to check valid string.
-        String regex = "[a-zA-Z_$]+[a-zA-Z_$0-9]*|[public|protected|private|static|\s]+[a-zA-Z_$0-9]*";
+        String regex = "[a-zA-Z_$]+[a-zA-Z_$0-9]*|[public|protected|private|static|\s]?[a-zA-Z_$0-9]*";
   
         // Compile the ReGex
         Pattern p = Pattern.compile(regex);
